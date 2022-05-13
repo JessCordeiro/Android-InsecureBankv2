@@ -68,7 +68,7 @@ def getaccounts():
               from_acc=i.account_number;		
         for j in a:
           if (i.type=='to'):
-	     	 to_acc=i.account_number;
+	      to_acc=i.account_number;
     data = {"message" : Responsemsg, "from": from_acc,"to": to_acc}
     print (makejson(data))
     return makejson(data)
