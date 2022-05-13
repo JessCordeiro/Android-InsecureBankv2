@@ -37,9 +37,9 @@ def login():
     u = User.query.filter(User.username == request.form["username"]).first()
     print ("u=",u)
     if u and u.password == request.form["password"]:
-	Responsemsg="Correct Credentials"
+            Responsemsg="Correct Credentials"		  
     elif u and u.password != request.form["password"]:
-	Responsemsg="Wrong Password"
+            Responsemsg="Wrong Password"
     elif not u:
         Responsemsg="User Does not Exist"
     else: Responsemsg="Some Error"
@@ -65,10 +65,10 @@ def getaccounts():
         a=Account.query.filter(Account.user == user)
         for i in a:
           if (i.type=='from'):
-	    from_acc=i.account_number;
+              from_acc=i.account_number;		
         for j in a:
           if (i.type=='to'):
-	    to_acc=i.account_number;
+	      to_acc=i.account_number;
     data = {"message" : Responsemsg, "from": from_acc,"to": to_acc}
     print (makejson(data))
     return makejson(data)
